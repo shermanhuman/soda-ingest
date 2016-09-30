@@ -28,6 +28,11 @@ Utility to pull data from a Socrata Open Data API (SODA) publisher and populate 
 ## Getting an application token
 Create account and register app https://opendata.socrata.com
 
+## Open data websites
+- https://dev.socrata.com/
+- https://www.opendatanetwork.com/
+- https://data.cms.gov
+
 ## TODO:
 
 - Fix schema.js
