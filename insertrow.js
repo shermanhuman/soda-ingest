@@ -19,8 +19,8 @@ module.exports = function (record) {
         var keys = [];
         for (var prop in record) {
             keys.push(prop);
-            if (Number(record[prop]) === parseFloat(record[prop])) {  // isNaN and typeof suck, but if Number() and parseFloat()   
-                record[prop] = Number(record[prop]);                  // agree then it can be safely coerced to a number.
+            if (!isNaN(Number(record[prop]))) {
+                record[prop] = Number(record[prop]);
             }
         }
         var insertstatement = pgp.helpers.insert(record, keys, config.psql_table);
