@@ -27,3 +27,11 @@ Utility to pull data from a Socrata Open Data API (SODA) publisher and populate 
 
 ## Getting an application token
 Create account and register app https://opendata.socrata.com
+
+## TODO:
+
+- Fix schema.js
+    - no more manual operation
+    - dynamically add table if it doesn't exist
+    - add an option to nuke table on import
+    - dynamically generate schema based on incoming data 
