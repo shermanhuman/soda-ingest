@@ -20,10 +20,31 @@ Utility to pull data from a Socrata Open Data API (SODA) publisher and populate 
 - SODA_QUERY: Your SODA query string
 
 ## Configuration examples
-### BASH:
 
-    export PSQL_HOST=yourpostgres.hostname.or.ip PSQL_PORT=5432 PSQL_DBNAME=yourdbname PSQL_USERNAME=master_soda PSQL_PASSWORD=yourpassword PSQL_TABLE=my_table
-    export SODA_HOST='https://data.cms.gov' SODA_RESOURCE='ehrv-m9r6.json' SODA_TOKEN=yourtoken
+### BASH:
+Note: in bash, remember to escape the '$' char using the backslash '\'.  If you create a script, make sure to source it instead of executing it.
+
+    export PSQL_HOST='ahh.hmmhumhrm.us-west-2.rds.amazonaws.com'
+    export PSQL_DBNAME='soda_ingest' 
+    export PSQL_USERNAME='master_user'
+    export PSQL_PASSWORD='password' 
+    export PSQL_TABLE='medicare_ipps' 
+    export SODA_TOKEN='1234567890abcdefghijk'   
+    export SODA_URL='https://data.cms.gov/resource/ehrv-m9r6.json'
+    export SODA_QUERY="?\$where=provider_state='AZ'&\$limit=3&\$select=drg_definition,provider_name,provider_id,average_medicare_payments_2,average_medicare_payments"
+
+### Windows command line
+Note: you need to escape the '$' and '&' characters with '^'.  The variables only last as long as the command window is open.  Use 'xset' instead of 'set' if you want
+them to persist.  Take care, trailing spaces will break things.
+
+    set PSQL_HOST=ahh.hmmhumhrm.us-west-2.rds.amazonaws.com
+    set PSQL_DBNAME=soda_ingest
+    set PSQL_USERNAME=master_user
+    set PSQL_PASSWORD=password
+    set PSQL_TABLE=medicare_ipps
+    set SODA_TOKEN=1234567890abcdefghijk
+    set SODA_URL=https://data.cms.gov/resource/ehrv-m9r6.json
+    set SODA_QUERY=?^$where=provider_state='AZ'^&^$limit=3^&^$select=drg_definition,provider_name,provider_id,average_medicare_payments_2,average_medicare_payments
 
 ## Getting an application token
 Create account and register app https://opendata.socrata.com
