@@ -25,14 +25,16 @@ module.exports = function (record) {
             }
         }
         var insertstatement = pgp.helpers.insert(record, keys, config.psql_table);
-        console.log(insertstatement);
-
         db.none(insertstatement)
             .then(function () {
+                console.log(insertstatement);
                 resolve();
             })
             .catch(function (err) {
                 reject(err);
+            })
+            .finally(function(){
+                pgp.end();
             });
     });
 };
