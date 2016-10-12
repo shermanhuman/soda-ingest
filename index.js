@@ -12,5 +12,4 @@ getsoda()
 })
 .catch(function(e) {
     console.log('Error: ' + e)
-})
-
+});

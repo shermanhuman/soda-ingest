@@ -13,6 +13,7 @@ var pg_config = {
 
 var db = pgp(pg_config);
 
+
 module.exports = function (record) {
     return new Promise(function (resolve, reject) {
 
@@ -26,7 +27,6 @@ module.exports = function (record) {
         var insertstatement = pgp.helpers.insert(record, keys, config.psql_table);
         console.log(insertstatement);
 
-
         db.none(insertstatement)
             .then(function () {
                 resolve();
@@ -35,4 +35,4 @@ module.exports = function (record) {
                 reject(err);
             });
     });
-}
+};
