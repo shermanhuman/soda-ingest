@@ -6,9 +6,6 @@ var Promise = require("bluebird");
 
 
 getsoda()
-.then(function(responsedata) {
-    return responsedata;
-})
 .each(function(record){
     insertrow(record);
     return 0;
