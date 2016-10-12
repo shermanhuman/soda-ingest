@@ -12,4 +12,7 @@ getsoda()
 })
 .catch(function(e) {
     console.log('Error: ' + e)
+})
+.finally(function() {
+    console.log('Fin.');
 });
