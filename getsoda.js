@@ -4,7 +4,7 @@ var rp = require('request-promise');
 var Promise = require('bluebird');
 
         var options = {
-            uri: config.soda_url + '/' + config.soda_query,
+            uri: config.soda_url + config.soda_query,
             headers: { 'X-App-Token': config.soda_token },
             json: true 
         };
